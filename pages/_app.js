@@ -1,6 +1,6 @@
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
 
-import theme from '../theme'
+import theme from '../eps-theme/theme'
 
 function MyApp({ Component, pageProps }) {
     return (
