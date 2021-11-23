@@ -1,3 +1,11 @@
+# EPS App using Chakra UI
+
+This project demonstrates an implementation of the EPS design system and the Elementor app, using chakra UI library.
+The theme has been customized - it can be found unter the ```/eps-theme/``` folder.
+Some custom components have been added under ```/components/```
+The purpose of this project is to experiment and explore ui development solutions.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
