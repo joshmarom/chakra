@@ -3,7 +3,7 @@ import { Menu } from './Menu';
 
 export const Sidebar = ( props ) => (
     <Flex py="1.5rem" {...props}>
-        <Menu items={props.items}/>
+        <Menu as="nav" items={props.items}/>
     </Flex>
 );
 

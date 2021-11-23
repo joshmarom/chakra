@@ -9,22 +9,21 @@ import {useState} from "react";
 
 const MenuItem = (props) => {
     const [isHover, setIsHover] = useState(false);
-    const activeBgColor = useColorModeValue( 'white', 'gray.700' );
+    const textColor = useColorModeValue(
+        isHover ? 'gray.900' : 'gray.700',
+        isHover ? 'gray.50' : 'gray.200');
+    const hoverStyle = { color: 'cyan.400', textDecoration: 'none' };
+    const activeStyle = { bg: useColorModeValue( 'white', 'gray.700' ), boxShadow: 'sm', ...hoverStyle };
 
     return (
-        <ListItem as={Flex} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}
-            bg={props.active ? activeBgColor : ''}>
-            <Flex as={ChakraLink} href={props.href}
-                  py={2} paddingInlineStart={7} paddingInlineEnd={2}
-                  _hover={{ color: 'cyan.400', textDecoration: 'none' }}
-                  transition="color 250ms" lineHeight={7}
-                  alignItems="center" grow={1} {...props}>
-                <ListIcon color="currentColor" icon={props.icon} />
-                <Text transition="color 250ms" color={ useColorModeValue(
-                      isHover ? 'gray.900' : 'gray.700',
-                      isHover ? 'gray.50' : 'gray.200') }>{props.title}</Text>
+        <ListItem onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
+            <Flex as={ ChakraLink } py={2} paddingInlineStart={7} lineHeight={7} alignItems="center" grow={1}
+                  _hover={ hoverStyle } _active={ activeStyle } transition="color 250ms" data-active={props.active} { ...props }>
+                <ListIcon icon={ props.icon } />
+                <Text transition="color 250ms" color={ textColor }>{ props.title }</Text>
             </Flex>
-    </ListItem>);
+        </ListItem>
+    );
 }
 
 export default MenuItem;
