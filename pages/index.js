@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar';
 import TopBar from '../components/TopBar';
 import TemplateCard from '../components/TemplateCard';
 import ElementorIcon from '../components/ElementorIcon';
+import menuItems from '../data/mainMenu';
 import { bg as bgColor, text as textColor, border as borderColor } from '../eps-theme/colors-by-mode';
 import faker from "faker";
 
@@ -16,49 +17,16 @@ const Index = () => {
         borderColor: useColorModeValue(borderColor.hr[0], borderColor.hr[1]),
     };
 
-    const menuItems = [
-        {
-            title: 'Home',
-            href: '/',
-            icon: 'home',
-            active: true,
-        },
-        {
-            title: 'About',
-            href: '/about',
-            icon: 'info',
-        },
-        {
-            title: 'Contact',
-            href: '/contact',
-            icon: 'mail',
-        },
-        {
-            title: 'Theme Builder',
-            href: '/theme-builder',
-            icon: 'window',
-        },
-        {
-            title: 'Import/Export',
-            href: '/import-export',
-            icon: 'upload',
-        }
-    ];
-
     /*
     * Each card has a title, and an image from the url https://picsum.photos/id/{itemId}/200/300, .
     * */
     const itemsData = ( count = 20 ) => {
         const items = [];
         for ( let i = 0; i < count; i++ ) {
-            const title = faker.company.companyName();
-            const image = `https://picsum.photos/id/${i*7}/200/300`;
-            const description = faker.lorem.paragraph();
-
             items.push({
-                title,
-                image,
-                description,
+                title: faker.company.companyName(),
+                image: `https://picsum.photos/seed/${i*7}/300/300`,
+                description: faker.lorem.paragraph(),
             });
         }
 
