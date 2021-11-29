@@ -12,8 +12,8 @@ export const TopBar = (props) => (
         </Heading>
         {props.children}
         <Box marginInlineStart={"auto"}>
-            <DarkModeSwitch/>
             {props.actionButtons}
+            <DarkModeSwitch/>
         </Box>
     </Flex> )
 

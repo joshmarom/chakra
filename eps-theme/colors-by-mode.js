@@ -1,8 +1,10 @@
+import {useColorModeValue} from "@chakra-ui/system";
+
 export const bg = {
     canvas: [ 'gray.100', 'gray.900' ],
     card: [ 'white', 'gray.700' ],
     bar: [ 'white', 'gray.700' ],
-    panel: [ 'gray.50', 'gray.800' ],
+    panel: [ 'whiteAlpha.500', 'whiteAlpha.100' ],
 }
 
 export const text = {

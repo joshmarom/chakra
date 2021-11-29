@@ -1,12 +1,12 @@
 import { Button, Container, Divider, Flex, Grid, Heading, Stack, Text } from '@chakra-ui/react'
 import { useColorModeValue } from "@chakra-ui/system";
-import TemplateCard from '../components/TemplateCard';
+import Card from '../components/Card';
 import { border as borderColor } from '../eps-theme/colors-by-mode';
 import AppWrapper from "../components/AppWrapper";
 import items from "../data/items";
 
-export const Index = () =>
-    <AppWrapper pageSlug="/">
+export const Library = () =>
+    <AppWrapper pageSlug="/library">
         <Container maxW="container.xl" p={16} fontSize="sm">
             <Heading as="h1" size="xl" mb={4}>Welcome to Elementor</Heading>
             <Divider borderColor={useColorModeValue(borderColor.hr[0], borderColor.hr[1])} mb="4"/>
@@ -42,9 +42,9 @@ export const Index = () =>
             <Grid gap={5} w="full" mt="6" templateColumns={{
                 base: "1fr", sm: "1fr",  md: "repeat(2,1fr)", lg: "repeat(3,1fr)", xl: "repeat(4,1fr)"
             }}>
-                { [ ...items ].map( ( item, i ) => <TemplateCard key={i} {...item}/> ) }
+                { [ ...items ].map( ( item, i ) => <Card key={i} {...item}/> ) }
             </Grid>
         </Container>
     </AppWrapper>
 
-export default Index;
+export default Library;

@@ -12,6 +12,8 @@ import {
     letterSpacings,
 } from './typography'
 import zIndices from './zindex'
+import layerStyles from "./layerStyles";
+import { mode } from '@chakra-ui/theme-tools';
 
 const breakpoints = createBreakpoints({
     sm: '40em',
@@ -29,12 +31,15 @@ const theme = extendTheme({
     fonts,
     fontSizes,
     fontWeights,
+    layerStyles,
     lineHeights,
     letterSpacings,
     space,
     sizes,
     radii,
     zIndices,
+    components: {
+    },
     icons: {
         logo: {
             path: (
