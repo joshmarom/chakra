@@ -11,7 +11,7 @@ const Card = (props) => {
     const [ isHover, setIsHover ] = useState(false );
     const [ isOpen, setIsOpen ] = useState(false );
 
-    return ( <motion.div
+    return ( <motion.div layout
              whileHover={{ scale: 1.025 }}
              whileTap={{ scale: 0.975 }}>
         <Box bg={ useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')} overflow="hidden"
@@ -19,7 +19,10 @@ const Card = (props) => {
              borderRadius="lg" boxShadow="lg"
              onMouseEnter={() => setIsHover(true)}
              onMouseLeave={() => setIsHover(false)}
-             onClick={() => setIsOpen( true )}
+             onClick={() => {
+                 setIsOpen( true )
+                 setIsHover( false )
+             } }
         >
             <AspectRatio ratio={1}>
                 <>
@@ -30,7 +33,9 @@ const Card = (props) => {
                         <Center color={useColorModeValue(textColor.heading[0],textColor.heading[1])}>
                             <AiOutlineEye fontSize="4rem"/>
 
-                            <LibdaryModal isOpen={ isOpen } onClose={ () => setIsOpen(false) }><Heading>Hello!</Heading></LibdaryModal>
+                            <LibdaryModal isOpen={ isOpen } onClose={ () => setIsOpen(false) }>
+                                <Heading>{props.title}</Heading>
+                            </LibdaryModal>
                         </Center>
                     </Box>
                 </>

@@ -4,9 +4,11 @@ import Card from '../components/Card';
 import { border as borderColor } from '../eps-theme/colors-by-mode';
 import AppWrapper from "../components/AppWrapper";
 import items from "../data/items";
+import { LayoutGroup } from "framer-motion"
 
 export const Library = () =>
     <AppWrapper pageSlug="/library">
+        <LayoutGroup>
         <Container maxW="container.xl" p={16} fontSize="sm">
             <Heading as="h1" size="xl" mb={4}>Welcome to Elementor</Heading>
             <Divider borderColor={useColorModeValue(borderColor.hr[0], borderColor.hr[1])} mb="4"/>
@@ -45,6 +47,7 @@ export const Library = () =>
                 { [ ...items ].map( ( item, i ) => <Card key={i} {...item}/> ) }
             </Grid>
         </Container>
+        </LayoutGroup>
     </AppWrapper>
 
 export default Library;
