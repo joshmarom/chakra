@@ -8,7 +8,7 @@ export const TopBar = (props) => (
     <Flex as="header" boxShadow="sm" sx={{"gap": ".75rem"}} px={4} zIndex={3} alignItems={"center"} {...props}>
         { props.icon }
         <Heading as="h2" size="sm" color={ useColorModeValue( textColor.heading[0], textColor.heading[1] ) }>
-            { props.pageTitle }
+            { props.title }
         </Heading>
         {props.children}
         <Box marginInlineStart={"auto"}>

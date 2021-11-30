@@ -16,7 +16,7 @@ const AppWrapper = (props) => {
         <Grid minH="100vh" templateRows="50px 1fr" templateColumns="275px 1fr" bg={appBgColor} color={bodyTextColor}>
             <TopBar as={GridItem} colSpan={2} bg={topBarBgColor}
                       icon={<ElementorIcon/>}
-                      pageTitle="Elementor App Built with Chakra"/>
+                      title="Elementor App Built with Chakra"/>
             <GridItem boxShadow="lg" zIndex={2} pt={8} bg={sideBgColor}>
                 <Menu items={ menuItems } activeItem={props.pageSlug}/>
             </GridItem>
